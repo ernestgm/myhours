@@ -10,6 +10,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.ernestgm.myhours.R
 import com.ernestgm.myhours.databinding.FragmentHomeBinding
+import com.ernestgm.myhours.ui.slides.adapter.SlidesAdapter
+import com.google.android.material.tabs.TabLayoutMediator
 
 class HomeFragment : Fragment() {
 
@@ -26,17 +28,29 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+            ViewModelProvider(this)[HomeViewModel::class.java]
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
+        initSlides()
+        //val textView: TextView = binding.textHome
         homeViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
+            //textView.text = it
         })
         return root
     }
+
+    private fun initSlides() {
+        activity?.let {
+            binding.pager.adapter = SlidesAdapter(it)
+        }
+
+        // The pager adapter, which provides the pages to the view pager widget.
+        TabLayoutMediator(binding.tabs, binding.pager) { tab, position ->
+        }.attach()
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
