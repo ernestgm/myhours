@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
     tools:context=".ui.slides.SlidesItemsFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        style="@style/HoursPriceText"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="120 usd" />
+
+    <TextView
+        style="@style/SubtitleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="en la semana" />
+
+    <TextView
+        style="@style/HoursWorkedText"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginTop="12dp"
+        android:text="16 hrs" />
+
+    <TextView
+        style="@style/SubtitleText"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF" />
+        android:text="trabajadas" />
 
-</FrameLayout>
+</LinearLayout>

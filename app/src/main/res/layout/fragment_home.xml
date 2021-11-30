@@ -7,6 +7,7 @@
     tools:context=".ui.home.HomeFragment">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_shedule_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="24dp"
@@ -36,7 +37,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="16dp"
+            android:layout_marginTop="20dp"
             android:gravity="center_horizontal|center_vertical"
             android:orientation="vertical">
 
@@ -51,7 +52,7 @@
                 android:id="@+id/tabs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
+                android:layout_margin="8dp"
                 app:tabBackground="@drawable/pager_tab_selector"
                 app:tabGravity="center"
                 app:tabIndicatorHeight="0dp" />

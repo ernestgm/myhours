@@ -8,8 +8,11 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.ernestgm.myhours.R
 import com.ernestgm.myhours.databinding.FragmentHomeBinding
+import com.ernestgm.myhours.ui.home.placeholder.PlaceholderContent
 import com.ernestgm.myhours.ui.slides.adapter.SlidesAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -34,11 +37,20 @@ class HomeFragment : Fragment() {
         val root: View = binding.root
 
         initSlides()
+        initSheduleList()
         //val textView: TextView = binding.textHome
         homeViewModel.text.observe(viewLifecycleOwner, Observer {
             //textView.text = it
         })
         return root
+    }
+
+    private fun initSheduleList() {
+        // Set the adapter
+        with(binding.recycleSheduleList) {
+            layoutManager = LinearLayoutManager(context)
+            adapter = SheduleListRecyclerViewAdapter(PlaceholderContent.ITEMS)
+        }
     }
 
     private fun initSlides() {

@@ -23,4 +23,28 @@
         <!-- Support library compatibility -->
         <item name="windowActionBarOverlay">true</item>
     </style>
+
+    <style name="MainStyleText">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="HoursPriceText" parent="MainStyleText">
+        <item name="android:textSize">20pt</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="HoursWorkedText" parent="MainStyleText">
+        <item name="android:textSize">16pt</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="SubtitleText" parent="MainStyleText">
+        <item name="android:textSize">8pt</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
 </resources>
